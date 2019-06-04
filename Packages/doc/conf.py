@@ -1,6 +1,7 @@
 # imports
 from subprocess import Popen, PIPE
 import sys
+import os
 
 def setup(app):
     app.add_stylesheet('custom.css')
@@ -19,13 +20,12 @@ def get_version():
     else:
         return "({branch}) {version}".format(branch=branchString, version=revString)
 
-
 # sphinx config
 extensions = ['sphinx.ext.mathjax', 'sphinx.ext.todo', 'breathe', 'sphinxcontrib.fulltoc', 'sphinxcontrib.images']
 master_doc = "index"
 project= "MIES Igor"
 
-exclude_patterns = [ 'releasenotes_template.rst']
+exclude_patterns = [ 'releasenotes_template.rst', 'IPNWB/specifications']
 
 cpp_id_attributes = [ 'threadsafe' ]
 
