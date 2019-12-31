@@ -15,8 +15,8 @@ if [ ! $(groups | grep -c -w docker) -eq 1 ]; then
 fi
 # build containter
 echo "start building Docker container 'docker-build-documentation'"
-docker build -qt docker-build-documentation -f docker-build-documentation/Dockerfile .
+docker build -qt docker-build-documentation -f $(git rev-parse --show-toplevel)/tools/docker/docker-build-documentation/Dockerfile .
 # run doxygen to see if correct version was installed
-echo "Doxygen version" $(docker run -it --rm -v $(pwd)/../..:/opt/mies docker-build-documentation doxygen -v)
+echo "Doxygen version" $(docker run -it --rm -v $(git rev-parse --show-toplevel):/opt/mies docker-build-documentation doxygen -v)
 # execute build script (has to be executed from the docker-dir in ./tools/docker)
-docker run -it --rm -v $(pwd)/../..:/opt/mies docker-build-documentation /bin/sh /opt/mies/tools/build-documentation.sh
+docker run -it --rm -v $(git rev-parse --show-toplevel):/opt/mies docker-build-documentation /bin/bash /opt/mies/tools/build-documentation.sh
