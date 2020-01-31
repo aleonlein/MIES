@@ -852,7 +852,7 @@ Window DA_Ephys() : Panel
 	PopupMenu Wave_TTL_07,userdata(ControlArray)=  "Wave_TTL"
 	PopupMenu Wave_TTL_07,userdata(ControlArrayIndex)=  "7"
 	PopupMenu Wave_TTL_07,mode=1,popvalue="- none -",value= #"\"- none -;\"+ReturnListOfAllStimSets(1,\"*TTL*\")"
-	CheckBox Check_Settings_TrigOut,pos={33.00,255.00},size={59.00,15.00},disable=1,proc=DAP_CheckProc_UpdateGuiState,title="\\JCTrig Out"
+	CheckBox Check_Settings_TrigOut,pos={33.00,255.00},size={58.00,15.00},disable=1,proc=DAP_CheckProc_UpdateGuiState,title="\\JCTrig Out"
 	CheckBox Check_Settings_TrigOut,help={"Turns on TTL pulse at onset of sweep"}
 	CheckBox Check_Settings_TrigOut,userdata(tabnum)=  "5"
 	CheckBox Check_Settings_TrigOut,userdata(tabcontrol)=  "ADC"
@@ -860,7 +860,7 @@ Window DA_Ephys() : Panel
 	CheckBox Check_Settings_TrigOut,userdata(ResizeControlsInfo) += A"zzzzzzzzzzzz!!#u:Du]k<zzzzzzzzzzz"
 	CheckBox Check_Settings_TrigOut,userdata(ResizeControlsInfo) += A"zzz!!#u:Du]k<zzzzzzzzzzzzzz!!!"
 	CheckBox Check_Settings_TrigOut,fColor=(65280,43520,0),value= 0
-	CheckBox Check_Settings_TrigIn,pos={33.00,276.00},size={49.00,15.00},disable=1,proc=DAP_CheckProc_UpdateGuiState,title="\\JCTrig In"
+	CheckBox Check_Settings_TrigIn,pos={33.00,276.00},size={48.00,15.00},disable=1,proc=DAP_CheckProc_UpdateGuiState,title="\\JCTrig In"
 	CheckBox Check_Settings_TrigIn,help={"Starts Data Aquisition with TTL signal to trig in port on rack"}
 	CheckBox Check_Settings_TrigIn,userdata(tabnum)=  "5"
 	CheckBox Check_Settings_TrigIn,userdata(tabcontrol)=  "ADC"
@@ -1150,7 +1150,7 @@ Window DA_Ephys() : Panel
 	CheckBox Check_Settings_Append,userdata(ResizeControlsInfo) += A"zzzzzzzzzzzz!!#u:Du]k<zzzzzzzzzzz"
 	CheckBox Check_Settings_Append,userdata(ResizeControlsInfo) += A"zzz!!#u:Du]k<zzzzzzzzzzzzzz!!!"
 	CheckBox Check_Settings_Append,value= 0
-	CheckBox Check_Settings_BkgTP,pos={27.00,84.00},size={97.00,15.00},disable=3,proc=DAP_CheckProc_UpdateGuiState,title="Background TP"
+	CheckBox Check_Settings_BkgTP,pos={27.00,84.00},size={96.00,15.00},disable=3,proc=DAP_CheckProc_UpdateGuiState,title="Background TP"
 	CheckBox Check_Settings_BkgTP,help={"Perform testpulse in the background, keeping the GUI responsive."}
 	CheckBox Check_Settings_BkgTP,userdata(tabnum)=  "5"
 	CheckBox Check_Settings_BkgTP,userdata(tabcontrol)=  "ADC"
@@ -1846,7 +1846,7 @@ Window DA_Ephys() : Panel
 	Button button_DataAcq_TurnOffAllChan,userdata(ResizeControlsInfo)= A"!!,I?J,hp!!!#=S!!#>.z!!#](Aon\"Qzzzzzzzzzzzzzz!!#](Aon\"Qzz"
 	Button button_DataAcq_TurnOffAllChan,userdata(ResizeControlsInfo) += A"zzzzzzzzzzzz!!#u:Du]k<zzzzzzzzzzz"
 	Button button_DataAcq_TurnOffAllChan,userdata(ResizeControlsInfo) += A"zzz!!#u:Du]k<zzzzzzzzzzzzzz!!!"
-	CheckBox check_Settings_ITITP,pos={27.00,108.00},size={130.00,15.00},disable=1,proc=DAP_CheckProc_UpdateGuiState,title="Activate TP during ITI"
+	CheckBox check_Settings_ITITP,pos={27.00,108.00},size={128.00,15.00},disable=1,proc=DAP_CheckProc_UpdateGuiState,title="Activate TP during ITI"
 	CheckBox check_Settings_ITITP,userdata(tabnum)=  "5"
 	CheckBox check_Settings_ITITP,userdata(tabcontrol)=  "ADC"
 	CheckBox check_Settings_ITITP,userdata(ResizeControlsInfo)= A"!!,Cl!!#@>!!#@e!!#<(z!!#](Aon\"Qzzzzzzzzzzzzzz!!#](Aon\"Qzz"
@@ -2094,7 +2094,7 @@ Window DA_Ephys() : Panel
 	CheckBox check_Settings_ScalingZero,userdata(ResizeControlsInfo) += A"zzzzzzzzzzzz!!#u:Du]k<zzzzzzzzzzz"
 	CheckBox check_Settings_ScalingZero,userdata(ResizeControlsInfo) += A"zzz!!#u:Du]k<zzzzzzzzzzzzzz!!!"
 	CheckBox check_Settings_ScalingZero,value= 0
-	CheckBox check_Settings_SetOption_04,pos={215.00,349.00},size={116.00,15.00},disable=3,proc=DAP_CheckProc_UpdateGuiState,title="Turn off headstage"
+	CheckBox check_Settings_SetOption_04,pos={215.00,349.00},size={115.00,15.00},disable=3,proc=DAP_CheckProc_UpdateGuiState,title="Turn off headstage"
 	CheckBox check_Settings_SetOption_04,help={"Turns off AD associated with DA via Channel and Amplifier Assignments"}
 	CheckBox check_Settings_SetOption_04,userdata(tabnum)=  "5"
 	CheckBox check_Settings_SetOption_04,userdata(tabcontrol)=  "ADC"
@@ -2864,8 +2864,8 @@ Window DA_Ephys() : Panel
 	Slider slider_DataAcq_ActiveHeadstage,pos={129.00,129.00},size={255.00,22.00},disable=1,proc=DAP_SliderProc_MIESHeadStage
 	Slider slider_DataAcq_ActiveHeadstage,userdata(tabnum)=  "0"
 	Slider slider_DataAcq_ActiveHeadstage,userdata(tabcontrol)=  "ADC"
-	Slider slider_DataAcq_ActiveHeadstage,userdata(Config_DontRestore)= "1"
-	Slider slider_DataAcq_ActiveHeadstage,userdata(Config_DontSave)= "1"
+	Slider slider_DataAcq_ActiveHeadstage,userdata(Config_DontRestore)=  "1"
+	Slider slider_DataAcq_ActiveHeadstage,userdata(Config_DontSave)=  "1"
 	Slider slider_DataAcq_ActiveHeadstage,userdata(ResizeControlsInfo)= A"!!,Ff!!#@e!!#B9!!#<Xz!!#](Aon\"Qzzzzzzzzzzzzzz!!#](Aon\"Qzz"
 	Slider slider_DataAcq_ActiveHeadstage,userdata(ResizeControlsInfo) += A"zzzzzzzzzzzz!!#u:Duafnzzzzzzzzzzz"
 	Slider slider_DataAcq_ActiveHeadstage,userdata(ResizeControlsInfo) += A"zzz!!#u:Duafnzzzzzzzzzzzzzz!!!"
@@ -3138,7 +3138,7 @@ Window DA_Ephys() : Panel
 	CheckBox check_Settings_MD,userdata(ResizeControlsInfo) += A"zzzzzzzzzzzz!!#u:Duafnzzzzzzzzzzz"
 	CheckBox check_Settings_MD,userdata(ResizeControlsInfo) += A"zzz!!#u:Duafnzzzzzzzzzzzzzz!!!"
 	CheckBox check_Settings_MD,userdata(oldDisabledState)=  "2",value= 1
-	CheckBox Check_Settings_InsertTP,pos={168.00,84.00},size={62.00,15.00},disable=1,proc=DAP_CheckProc_InsertTP,title="Insert TP"
+	CheckBox Check_Settings_InsertTP,pos={168.00,84.00},size={61.00,15.00},disable=1,proc=DAP_CheckProc_InsertTP,title="Insert TP"
 	CheckBox Check_Settings_InsertTP,help={"Inserts a test pulse at the front of each sweep in a set."}
 	CheckBox Check_Settings_InsertTP,userdata(tabnum)=  "5"
 	CheckBox Check_Settings_InsertTP,userdata(tabcontrol)=  "ADC"
@@ -3154,7 +3154,7 @@ Window DA_Ephys() : Panel
 	CheckBox Check_DataAcq_Get_Set_ITI,userdata(ResizeControlsInfo) += A"zzzzzzzzzzzz!!#u:Duafnzzzzzzzzzzz"
 	CheckBox Check_DataAcq_Get_Set_ITI,userdata(ResizeControlsInfo) += A"zzz!!#u:Duafnzzzzzzzzzzzzzz!!!"
 	CheckBox Check_DataAcq_Get_Set_ITI,value= 1
-	SetVariable setvar_Settings_TPBuffer,pos={333.00,108.00},size={125.00,18.00},bodyWidth=50,disable=1,proc=DAP_SetVar_UpdateGuiState,title="TP Buffer size"
+	SetVariable setvar_Settings_TPBuffer,pos={334.00,108.00},size={124.00,18.00},bodyWidth=50,disable=1,proc=DAP_SetVar_UpdateGuiState,title="TP Buffer size"
 	SetVariable setvar_Settings_TPBuffer,userdata(tabnum)=  "5"
 	SetVariable setvar_Settings_TPBuffer,userdata(tabcontrol)=  "ADC"
 	SetVariable setvar_Settings_TPBuffer,userdata(ResizeControlsInfo)= A"!!,H]J,hpi!!#@^!!#<Hz!!#](Aon\"Qzzzzzzzzzzzzzz!!#](Aon\"Qzz"
@@ -3385,7 +3385,7 @@ Window DA_Ephys() : Panel
 	SetVariable setvar_Settings_SealStartP,userdata(ResizeControlsInfo) += A"zzzzzzzzzzzz!!#u:Duafnzzzzzzzzzzz"
 	SetVariable setvar_Settings_SealStartP,userdata(ResizeControlsInfo) += A"zzz!!#u:Duafnzzzzzzzzzzzzzz!!!"
 	SetVariable setvar_Settings_SealStartP,limits={-10,0,0.1},value= _NUM:-0.2
-	SetVariable setvar_Settings_SealMaxP,pos={320.00,798.00},size={136.00,18.00},bodyWidth=50,disable=1,proc=DAP_SetVarProc_CAA,title="Seal max P (psi)"
+	SetVariable setvar_Settings_SealMaxP,pos={319.00,798.00},size={137.00,18.00},bodyWidth=50,disable=1,proc=DAP_SetVarProc_CAA,title="Seal max P (psi)"
 	SetVariable setvar_Settings_SealMaxP,help={"Set the maximum negative pressure used to form a seal."}
 	SetVariable setvar_Settings_SealMaxP,userdata(tabnum)=  "5"
 	SetVariable setvar_Settings_SealMaxP,userdata(tabcontrol)=  "ADC"
@@ -3645,7 +3645,7 @@ Window DA_Ephys() : Panel
 	Button button_DataAcq_OpenCommentNB,userdata(ResizeControlsInfo)= A"!!,I3!!#DR^]6\\4!!#<Pz!!#](Aon\"Qzzzzzzzzzzzzzz!!#](Aon\"Qzz"
 	Button button_DataAcq_OpenCommentNB,userdata(ResizeControlsInfo) += A"zzzzzzzzzzzz!!#u:Du]k<zzzzzzzzzzz"
 	Button button_DataAcq_OpenCommentNB,userdata(ResizeControlsInfo) += A"zzz!!#u:Du]k<zzzzzzzzzzzzzz!!!"
-	CheckBox check_Settings_TPAfterDAQ,pos={168.00,108.00},size={131.00,15.00},disable=1,proc=DAP_CheckProc_UpdateGuiState,title="Activate TP after DAQ"
+	CheckBox check_Settings_TPAfterDAQ,pos={168.00,108.00},size={130.00,15.00},disable=1,proc=DAP_CheckProc_UpdateGuiState,title="Activate TP after DAQ"
 	CheckBox check_Settings_TPAfterDAQ,help={"Immediately start a test pulse after DAQ finishes"}
 	CheckBox check_Settings_TPAfterDAQ,userdata(tabnum)=  "5"
 	CheckBox check_Settings_TPAfterDAQ,userdata(tabcontrol)=  "ADC"
@@ -3661,7 +3661,7 @@ Window DA_Ephys() : Panel
 	PopupMenu Popup_Settings_SampIntMult,userdata(ResizeControlsInfo) += A"zzzzzzzzzzzz!!#u:Du]k<zzzzzzzzzzz"
 	PopupMenu Popup_Settings_SampIntMult,userdata(ResizeControlsInfo) += A"zzz!!#u:Du]k<zzzzzzzzzzzzzz!!!"
 	PopupMenu Popup_Settings_SampIntMult,mode=1,popvalue="1",value= #"DAP_GetSamplingMultiplier()"
-	CheckBox Check_Settings_NwbExport,pos={33.00,231.00},size={103.00,15.00},disable=1,proc=DAP_CheckProc_UpdateGuiState,title="Export into NWB"
+	CheckBox Check_Settings_NwbExport,pos={33.00,231.00},size={104.00,15.00},disable=1,proc=DAP_CheckProc_UpdateGuiState,title="Export into NWB"
 	CheckBox Check_Settings_NwbExport,help={"Export all data including sweeps into a file in the NeurodataWithoutBorders fornat,"}
 	CheckBox Check_Settings_NwbExport,userdata(tabnum)=  "5"
 	CheckBox Check_Settings_NwbExport,userdata(tabcontrol)=  "ADC"
@@ -3669,7 +3669,7 @@ Window DA_Ephys() : Panel
 	CheckBox Check_Settings_NwbExport,userdata(ResizeControlsInfo) += A"zzzzzzzzzzzz!!#u:Du]k<zzzzzzzzzzz"
 	CheckBox Check_Settings_NwbExport,userdata(ResizeControlsInfo) += A"zzz!!#u:Du]k<zzzzzzzzzzzzzz!!!"
 	CheckBox Check_Settings_NwbExport,value= 0
-	PopupMenu Popup_Settings_NwbVersion,pos={139.00,231.00},size={69.00,19.00},proc=DAP_PopMenuProc_UpdateGuiState,title="version"
+	PopupMenu Popup_Settings_NwbVersion,pos={139.00,229.00},size={69.00,19.00},disable=1,proc=DAP_PopMenuProc_UpdateGuiState,title="version"
 	PopupMenu Popup_Settings_NwbVersion,help={"Set the NWB Version of the export when using triggered export from DA_Ephys"}
 	PopupMenu Popup_Settings_NwbVersion,userdata(tabcontrol)=  "ADC"
 	PopupMenu Popup_Settings_NwbVersion,userdata(tabnum)=  "5"
@@ -4034,7 +4034,7 @@ Window DA_Ephys() : Panel
 	SetVariable setvar_Settings_AutoBiasInt,userdata(tabnum)=  "5"
 	SetVariable setvar_Settings_AutoBiasInt,userdata(tabcontrol)=  "ADC"
 	SetVariable setvar_Settings_AutoBiasInt,limits={0.25,1000,0.25},value= _NUM:1
-	CheckBox Check_Settings_ITImanualStart,pos={33.00,300.00},size={201.00,15.00},disable=1,proc=DAP_CheckProc_UpdateGuiState,title="Respect ITI for manual initialization"
+	CheckBox Check_Settings_ITImanualStart,pos={33.00,300.00},size={200.00,15.00},disable=1,proc=DAP_CheckProc_UpdateGuiState,title="Respect ITI for manual initialization"
 	CheckBox Check_Settings_ITImanualStart,help={"Ensure that the ITI is reached even when manually stopping and starting sweeps."}
 	CheckBox Check_Settings_ITImanualStart,userdata(tabnum)=  "5"
 	CheckBox Check_Settings_ITImanualStart,userdata(tabcontrol)=  "ADC",value= 0
@@ -4053,7 +4053,7 @@ Window DA_Ephys() : Panel
 	PopupMenu popup_Settings_UserPressure,userdata(Config_RestorePriority)=  "60"
 	PopupMenu popup_Settings_UserPressure,userdata(Config_DontSave)=  "1"
 	PopupMenu popup_Settings_UserPressure,userdata(Config_DontRestore)=  "1"
-	PopupMenu popup_Settings_UserPressure,mode=1,popvalue="- none -",value= #"\"- none -;\""
+	PopupMenu popup_Settings_UserPressure,mode=1,popvalue="- none -",value= #"\"- none -;Dev1;Dev2;\""
 	PopupMenu Popup_Settings_UserPressure_ADC,pos={267.00,618.00},size={47.00,19.00},proc=DAP_PopMenuProc_UpdateGuiState,title="AD"
 	PopupMenu Popup_Settings_UserPressure_ADC,userdata(tabnum)=  "6"
 	PopupMenu Popup_Settings_UserPressure_ADC,userdata(tabcontrol)=  "ADC"
@@ -4078,7 +4078,7 @@ Window DA_Ephys() : Panel
 	SetVariable setvar_Settings_OsciUpdInt,userdata(tabnum)=  "5"
 	SetVariable setvar_Settings_OsciUpdInt,userdata(tabcontrol)=  "ADC"
 	SetVariable setvar_Settings_OsciUpdInt,limits={0,60000,50},value= _NUM:500
-	SetVariable setvar_Settings_OsciUpdExt,pos={262.00,597.00},size={181.00,18.00},bodyWidth=45,disable=1,proc=DAP_SetVar_UpdateGuiState,title="Y axis scale extension [%]"
+	SetVariable setvar_Settings_OsciUpdExt,pos={260.00,597.00},size={183.00,18.00},bodyWidth=45,disable=1,proc=DAP_SetVar_UpdateGuiState,title="Y axis scale extension [%]"
 	SetVariable setvar_Settings_OsciUpdExt,help={"Oscilloscope update axis extension for Interval mode"}
 	SetVariable setvar_Settings_OsciUpdExt,userdata(tabnum)=  "5"
 	SetVariable setvar_Settings_OsciUpdExt,userdata(tabcontrol)=  "ADC"
