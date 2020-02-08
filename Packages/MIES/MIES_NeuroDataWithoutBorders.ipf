@@ -733,7 +733,7 @@ static Function NWB_AppendSweepLowLevel(locationID, nwbVersion, panelTitle, ITCD
 	ASSERT(WaveExists(ADCs), "Labnotebook is too old for NWB export.")
 
 	// dito
-	WAVE DACs = GetLastSetting(numericalValues, sweep, "DAC", DATA_ACQUISITION_MODE)
+	WAVE/Z DACs = GetLastSetting(numericalValues, sweep, "DAC", DATA_ACQUISITION_MODE)
 	ASSERT(WaveExists(DACs), "Labnotebook is too old for NWB export.")
 
 	// 602debb9 (Record the active headstage in the settingsHistory, 2014-11-04)
