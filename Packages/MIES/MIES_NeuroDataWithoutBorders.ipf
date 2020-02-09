@@ -829,7 +829,7 @@ static Function NWB_AppendSweepLowLevel(locationID, nwbVersion, panelTitle, ITCD
 			col                     = AFH_GetITCDataColumn(ITCChanConfigWave, params.channelNumber, params.channelType)
 			writtenDataColumns[col] = 1
 			WAVE params.data        = ExtractOneDimDataFromSweep(ITCChanConfigWave, ITCDataWave, col)
-			NWB_GetTimeSeriesProperties(params, tsp)
+			NWB_GetTimeSeriesProperties(nwbVersion, params, tsp)
 			params.groupIndex    = IsFinite(params.groupIndex) ? params.groupIndex : IPNWB#GetNextFreeGroupIndex(locationID, path)
 			IPNWB#WriteSingleChannel(locationID, path, nwbVersion, params, tsp, compressionMode = compressionMode)
 		endif
@@ -843,7 +843,7 @@ static Function NWB_AppendSweepLowLevel(locationID, nwbVersion, panelTitle, ITCD
 			col                     = AFH_GetITCDataColumn(ITCChanConfigWave, params.channelNumber, params.channelType)
 			writtenDataColumns[col] = 1
 			WAVE params.data        = ExtractOneDimDataFromSweep(ITCChanConfigWave, ITCDataWave, col)
-			NWB_GetTimeSeriesProperties(params, tsp)
+			NWB_GetTimeSeriesProperties(nwbVersion, params, tsp)
 			params.groupIndex    = IsFinite(params.groupIndex) ? params.groupIndex : IPNWB#GetNextFreeGroupIndex(locationID, path)
 			IPNWB#WriteSingleChannel(locationID, path, nwbVersion, params, tsp, compressionMode = compressionMode)
 		endif
@@ -913,7 +913,7 @@ static Function NWB_AppendSweepLowLevel(locationID, nwbVersion, panelTitle, ITCD
 				params.channelSuffix = num2str(ttlBit)
 				params.channelSuffixDesc = NWB_SOURCE_TTL_BIT
 				params.stimset       = ttlStimsets[log(ttlBit)/log(2)]
-				NWB_GetTimeSeriesProperties(params, tsp)
+				NWB_GetTimeSeriesProperties(nwbVersion, params, tsp)
 				params.groupIndex    = IsFinite(params.groupIndex) ? params.groupIndex : IPNWB#GetNextFreeGroupIndex(locationID, path)
 				IPNWB#WriteSingleChannel(locationID, path, nwbVersion, params, tsp, compressionMode = compressionMode)
 			endfor
@@ -921,7 +921,7 @@ static Function NWB_AppendSweepLowLevel(locationID, nwbVersion, panelTitle, ITCD
 			WAVE params.data     = data
 			path                 = "/stimulus/presentation"
 			params.stimset       = stimset
-			NWB_GetTimeSeriesProperties(params, tsp)
+			NWB_GetTimeSeriesProperties(nwbVersion, params, tsp)
 			params.groupIndex    = IsFinite(params.groupIndex) ? params.groupIndex : IPNWB#GetNextFreeGroupIndex(locationID, path)
 			IPNWB#WriteSingleChannel(locationID, path, nwbVersion, params, tsp, compressionMode = compressionMode)
 		endif
@@ -960,7 +960,7 @@ static Function NWB_AppendSweepLowLevel(locationID, nwbVersion, panelTitle, ITCD
 				break
 		endswitch
 
-		NWB_GetTimeSeriesProperties(params, tsp)
+		NWB_GetTimeSeriesProperties(nwbVersion, params, tsp)
 		WAVE params.data       = ExtractOneDimDataFromSweep(ITCChanConfigWave, ITCDataWave, i)
 		params.groupIndex      = IsFinite(params.groupIndex) ? params.groupIndex : IPNWB#GetNextFreeGroupIndex(locationID, path)
 		IPNWB#WriteSingleChannel(locationID, path, nwbVersion, params, tsp, compressionMode = compressionMode)
@@ -1368,7 +1368,8 @@ Function NWB_LoadCustomWaves(groupID, stimsets, overwrite)
 	return 0
 End
 
-static Function NWB_GetTimeSeriesProperties(p, tsp)
+static Function NWB_GetTimeSeriesProperties(nwbVersion, p, tsp)
+	variable nwbVersion
 	STRUCT IPNWB#WriteChannelParams &p
 	STRUCT IPNWB#TimeSeriesProperties &tsp
 
@@ -1418,9 +1419,11 @@ static Function NWB_GetTimeSeriesProperties(p, tsp)
 			NWB_AddSweepDataSets(numericalKeys, numericalValues, p.sweep, "DA Gain", "gain", p.electrodeNumber, tsp)
 		endif
 
-		WAVE/Z values = GetLastSetting(numericalValues, p.sweep, STIMSET_SCALE_FACTOR_KEY, DATA_ACQUISITION_MODE)
-		if(WaveExists(values) || IsFinite(values[p.electrodeNumber]))
-			IPNWB#AddCustomProperty(tsp, "scale", values[p.electrodeNumber])
+		if(nwbVersion == 1)
+			WAVE/Z values = GetLastSetting(numericalValues, p.sweep, STIMSET_SCALE_FACTOR_KEY, DATA_ACQUISITION_MODE)
+			if(WaveExists(values) || IsFinite(values[p.electrodeNumber]))
+				IPNWB#AddCustomProperty(tsp, "scale", values[p.electrodeNumber])
+			endif
 		endif
 	endif
 End
