@@ -479,6 +479,10 @@ static Function DC_MakeHelperWaves(panelTitle, dataAcqOrTP)
 	DC_InitDataHoldingWave(TPOscilloscopeData, tpLength, sampleInterval, numDACs, numADCs, numTTLs)
 	DC_InitDataHoldingWave(OscilloscopeData, decimatedNumRows, decimatedSampleInterval, numDACs, numADCs, numTTLs)
 
+	if(dataAcqOrTP == TEST_PULSE_MODE && DAG_GetNumericalValue(panelTitle, "check_settings_show_power"))
+		Multithread OscilloscopeData[][0, numDACs - 1] = 0
+	endif
+
 	DC_InitDataHoldingWave(scaledDataWave, dataAcqOrTP == DATA_ACQUISITION_MODE ? stopCollectionPoint : tpLength, sampleInterval, numDACs, numADCs, numTTLs, type = SWS_GetRawDataFPType(panelTitle))
 End
 
