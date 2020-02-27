@@ -4698,13 +4698,13 @@ Function SaveTextFile(data, fileName,[ fileFilter, message])
 	variable fNum
 
 	if(ParamIsDefault(fileFilter) && ParamIsDefault(message))
-		Open/P=home/D=2 fnum as fileName
+		Open/D=2 fnum as fileName
 	elseif(ParamIsDefault(fileFilter) && !ParamIsDefault(message))
-		Open/P=home/D=2/M=message fnum as fileName
+		Open/D=2/M=message fnum as fileName
 	elseif(!ParamIsDefault(fileFilter) && ParamIsDefault(message))
-		Open/P=home/D=2/F=fileFilter fnum as fileName
+		Open/D=2/F=fileFilter fnum as fileName
 	else
-		Open/P=home/D=2/F=fileFilter/M=message fnum as fileName
+		Open/D=2/F=fileFilter/M=message fnum as fileName
 	endif
 
 	if(IsEmpty(S_fileName))
@@ -4733,13 +4733,13 @@ Function [string data, string fName] LoadTextFile(string fileName[, string fileF
 	zFlag = GetOpenZFlag()
 
 	if(ParamIsDefault(fileFilter) && ParamIsDefault(message))
-		Open/R/P=home/Z=(zFlag) fnum as fileName
+		Open/R/Z=(zFlag) fnum as fileName
 	elseif(ParamIsDefault(fileFilter) && !ParamIsDefault(message))
-		Open/R/P=home/Z=(zFlag)/M=message fnum as fileName
+		Open/R/Z=(zFlag)/M=message fnum as fileName
 	elseif(!ParamIsDefault(fileFilter) && ParamIsDefault(message))
-		Open/R/P=home/Z=(zFlag)/F=fileFilter fnum as fileName
+		Open/R/Z=(zFlag)/F=fileFilter fnum as fileName
 	else
-		Open/R/P=home/Z=(zFlag)/F=fileFilter/M=message fnum as fileName
+		Open/R/Z=(zFlag)/F=fileFilter/M=message fnum as fileName
 	endif
 
 	if(IsEmpty(S_fileName) || V_flag)
